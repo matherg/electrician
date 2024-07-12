@@ -11,8 +11,8 @@ const Header = () => {
                 <div className="absolute left-1/2 transform -translate-x-1/2">
                     <span className="text-2xl font-bold">Summit County, CO</span>
                 </div>
-                <nav className="flex flex-col  h-1/4 ">
-                    <ul className="flex  space-x-8 ">
+                <nav className="flex flex-col h-1/4 ">
+                    <ul className="flex text-xl space-x-8 ">
                         <li><a href="#" className="text-blue font-bold hover:text-grey">Home</a></li>
                         <li><a href="#" className="text-blue font-bold  hover:text-grey">About</a></li>
                         <li><a href="#" className="text-blue font-bold hover:text-grey">Contact</a></li>
