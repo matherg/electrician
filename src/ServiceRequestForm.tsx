@@ -24,7 +24,7 @@ const ServiceRequestForm = () => {
         'Service Changes'
     ];
 
-    const handleChange = (e) => {
+    const handleChange = (e : any) => {
         const { name, value, type, checked } = e.target;
         setFormData({
             ...formData,
@@ -32,10 +32,9 @@ const ServiceRequestForm = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e : any) => {
         e.preventDefault();
         console.log('Form Data:', formData);
-        // Add form submission logic here
     };
 
     return (
