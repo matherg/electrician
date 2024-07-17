@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Form = () => {
+const ServiceRequestForm = () => {
     const [formData, setFormData] = useState({
         urgent: false,
         description: '',
@@ -12,11 +12,16 @@ const Form = () => {
     });
 
     const services = [
-        'Service Option 1',
-        'Service Option 2',
-        'Service Option 3',
-        'Service Option 4',
-        'Service Option 5'
+        'Other',
+        'Heat Tape',
+        'Hot Tubs',
+        'Floor Heat',
+        'Remodels / Additions',
+        'Troubleshooting',
+        'Battery Backup Systems',
+        'EV-Chargers',
+        'Panel Changes',
+        'Service Changes'
     ];
 
     const handleChange = (e) => {
@@ -34,10 +39,10 @@ const Form = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-3/5  bg-bloo">
-            <h1 className="text-lg md:text-4xl font-bold text-center text-green mt-8 mb-2">Request a Service</h1>
+        <div id="services" className="flex flex-col items-center justify-center h-3/5 bg-bloo">
+            <h1 className="md:text-4xl text-2xl font-bold text-center text-green mt-20 ">Request a Service</h1>
             <form onSubmit={handleSubmit} className="space-y-4 items-center max-w-lg bg-white font-semibold text-bloo  mt-10 p-4 rounded-lg shadow-md">
-                <div className="flex items-center  gap-2">
+                <div  className="flex items-center  gap-2">
                     <input
                         type="checkbox"
                         name="urgent"
@@ -119,4 +124,4 @@ const Form = () => {
     );
 };
 
-export default Form;
+export default ServiceRequestForm;

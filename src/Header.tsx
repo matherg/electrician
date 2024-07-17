@@ -1,3 +1,12 @@
+const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    else {
+        console.log("section not found" + sectionId)
+    }
+};
 const Header = () => {
     return (
         <header className="bg-white z-20 drop-shadow-lg text-bloo w-full py-4 fixed top-0 left-0">
@@ -14,9 +23,14 @@ const Header = () => {
                 <div className="flex-1 flex justify-center items-center">
                     <nav className="flex flex-col items-end h-full">
                         <ul className="flex space-x-4 text-xl">
-                            <li><a href="#" className="text-bloo font-bold hover:text-grey">Home</a></li>
-                            <li><a href="#" className="text-bloo font-bold hover:text-grey">About</a></li>
-                            <li><a href="#" className="text-bloo font-bold hover:text-grey">Contact</a></li>
+                            <li><button onClick={() => scrollToSection('main')}
+                                        className="text-bloo font-bold hover:text-grey">Home
+                            </button>
+                            </li>
+                            <li>
+                                <button onClick={() => scrollToSection('about')}
+                                        className="text-bloo font-bold hover:text-grey">About</button></li>
+                            <li><button onClick={() => scrollToSection('services')} className="text-bloo font-bold hover:text-grey">Contact</button></li>
                         </ul>
                         <p className="text-bloo mt-2 text-sm md:text-base">ascentelectricinc@gmail.com</p>
                     </nav>

@@ -13,13 +13,9 @@ const AlternatingSectionBlue = () => {
                     <div
                         className=" bg-fadedblue md:max-w-2xl rounded-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-1/2 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
                         <div className="flex flex-col p-8 py-10 ">
-                            <h2 className="text-2xl font-medium  text-black lg:text-4xl">Lorem ipsum dolor sit</h2>
+                            <h2 className="text-2xl font-medium  text-black lg:text-4xl">On Time and On Budget</h2>
                             <p className="mt-4 text-white">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.
+                                Our twenty years of experience have taught us how to do the job at a fair price and on time. We are confident that you will have a satisfying experience when you choose to use our services. It’s a promise we’ll keep!
                             </p>
                         </div>
                     </div>
