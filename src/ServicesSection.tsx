@@ -1,22 +1,26 @@
-
 const ServicesSection = () => {
     return (
-        <div className="bg-grey w-full py-16">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl  font-bold text-center text-blue mb-8">Our Services</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 className="text-xl font-bold mb-4">Dolor Services</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Sit amet est placerat in. Eu sem integer vitae justo eget magna fermentum iaculis eu. Sagittis purus sit amet volutpat consequat mauris nunc. Imperdiet dui accums.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 className="text-xl font-bold mb-4">Lorum Services</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Sit amet est placerat in. Eu sem integer vitae justo eget magna fermentum iaculis eu. Sagittis purus sit amet volutpat consequat mauris nunc. Imperdiet dui accums.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 className="text-xl font-bold mb-4">Ipsum Services</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Sit amet est placerat in. Eu sem integer vitae justo eget magna fermentum iaculis eu. Sagittis purus sit amet volutpat consequat mauris nunc. Imperdiet dui accums.</p>
-                    </div>
+        <div className="bg-gradient-to-b from-bloo  to-white w-full py-16">
+            <div className="container  mx-auto px-4">
+                <h2 className="text-4xl text-white font-bold text-center mb-8">What We Do</h2>
+                <p className=" text-lg text-white text-center font-semibold mb-6">
+                    Ascent Electric is fully capable of meeting all your project requirements – from small installations to large-scale, complex projects. We are ready to design and install any system your building requires. Our experience spans both commercial and residential sectors, including work on facilities such as multifamily residences, ski shops, and custom homes. When you choose Ascent Electric, you choose timely, quality services that adhere to your budget.
+                </p>
+                <div className="bg-white p-6 mx-auto rounded-lg w-1/3 shadow-lg">
+                    <h3 className="text-xl font-bold text-blue mb-4">Services</h3>
+                    <ul className="list-disc list-inside space-y-2 text-bloo">
+                        <li className="font-medium">EV Chargers</li>
+                        <li className="font-medium">Service Changes</li>
+                        <li className="font-medium">New Construction</li>
+                        <li className="font-medium">Ski Shops</li>
+                        <li className="font-medium">Remodels / Additions</li>
+                        <li className="font-medium">Panel Changes</li>
+                        <li className="font-medium">Battery Backup Systems</li>
+                        <li className="font-medium">Retrofitting</li>
+                        <li className="font-medium">Hot Tubs</li>
+                        <li className="font-medium">Heat Tape</li>
+                        <li className="font-medium">Floor Heat</li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -34,9 +34,9 @@ const Form = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-3/5  bg-blue">
+        <div className="flex flex-col items-center justify-center h-3/5  bg-bloo">
             <h1 className="text-lg md:text-4xl font-bold text-center text-green mt-8 mb-2">Request a Service</h1>
-            <form onSubmit={handleSubmit} className="space-y-4 items-center max-w-lg bg-white font-semibold text-blue  mt-10 p-4 rounded-lg shadow-md">
+            <form onSubmit={handleSubmit} className="space-y-4 items-center max-w-lg bg-white font-semibold text-bloo  mt-10 p-4 rounded-lg shadow-md">
                 <div className="flex items-center  gap-2">
                     <input
                         type="checkbox"

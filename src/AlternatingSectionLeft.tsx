@@ -1,7 +1,7 @@
 
 const AlternatingSectionLeft = () => {
     return (
-        <div className="flex justify-start w-full  lg:px-20">
+        <div className="flex  justify-start w-full  lg:px-20">
             <div className="relative max-w-5xl mt-10 xl:max-w-6xl">
                 {/* Image and Text Wrapper */}
                 <div className="flex flex-col lg:flex-row justify-center items-center ">
