@@ -6,6 +6,7 @@ import Header from "./Header.tsx";
 import AlternatingSection from "./AlternatingSection.tsx";
 import AlternatingSectionLeft from "./AlternatingSectionLeft.tsx";
 import AlternatingSectionBlue from "./AlternatingSectionBlue.tsx";
+import ServiceRequestForm from "./ServiceRequestForm.tsx";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <AlternatingSection />
         <AlternatingSectionLeft/>
         <AlternatingSectionBlue/>
+        <ServiceRequestForm/>
         <Footer/>
 
     </>

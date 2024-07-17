@@ -1,6 +1,6 @@
 const MainSection = () => {
     return (
-        <div className="bg-blue text-white w-full  h-[80vh] flex items-center justify-center ">
+        <div className="bg-blue text-white w-full mt-10 h-[80vh] flex items-center justify-center ">
             <div className="text-center">
                 <h1 className="text-6xl font-bold mb-4 ">Ut enim ad minim veniam</h1>
                 <h2 className="text-5xl text-green font-bold mb-4 ">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"</h2>
