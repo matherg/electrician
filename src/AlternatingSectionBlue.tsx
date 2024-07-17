@@ -7,7 +7,7 @@ const AlternatingSectionBlue = () => {
                 <div className="flex flex-col lg:flex-row-reverse justify-center items-center mx-auto">
                     {/* Image Section */}
                     <div className="w-full h-64 lg:w-1/2  lg:h-auto">
-                        <img className="h-full w-full object-cover" src="/mountain.jpg" alt="Winding mountain road"/>
+                        <img className="h-full w-full rounded-2xl object-cover" src="/mountain.jpg" alt="Winding mountain road"/>
                     </div>
                     {/* Text Section */}
                     <div
