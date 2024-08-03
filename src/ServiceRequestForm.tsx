@@ -32,16 +32,34 @@ const ServiceRequestForm = () => {
         });
     };
 
-    const handleSubmit = (e : any) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Form Data:', formData);
+
+        try {
+            const response = await fetch('https://0faqyt69zf.execute-api.us-east-2.amazonaws.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // Optionally add authorization headers or API keys as required
+                },
+                body: JSON.stringify(formData) // Ensure formData is structured as needed for your backend
+            });
+
+            const data = await response.json();
+            console.log('Server response:', data);
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
     };
+
 
     return (
         <div id="services" className="flex flex-col items-center justify-center h-3/5 bg-bloo">
-            <h1 className="md:text-4xl text-2xl font-bold text-center text-green mt-20 ">Request a Service</h1>
-            <form onSubmit={handleSubmit} className="space-y-4 items-center max-w-lg bg-white font-semibold text-bloo  mt-10 p-4 rounded-lg shadow-md">
-                <div  className="flex items-center  gap-2">
+            <h1 className="md:text-4xl text-2xl font-semibold text-center text-green mt-20 ">Request a Service</h1>
+            <form onSubmit={handleSubmit}
+                  className="space-y-4 items-center max-w-lg bg-white font-semibold text-bloo  mt-10 p-4 rounded-lg shadow-md">
+                <div className="flex items-center  gap-2">
                     <input
                         type="checkbox"
                         name="urgent"
@@ -49,7 +67,7 @@ const ServiceRequestForm = () => {
                         onChange={handleChange}
                         className="accent-blue-500"
                     />
-                    <label >Urgent (within the week)</label>
+                    <label>Urgent (within the week)</label>
                 </div>
                 <div>
                     <label className="block mb-1">Email</label>
