@@ -7,7 +7,7 @@ const AlternatingSection = () => {
                 <div className="flex flex-col lg:flex-row-reverse justify-center  mx-auto">
                     {/* Image Section */}
                     <div className="w-full h-64 lg:w-1/2 lg:h-auto">
-                        <img className="h-full w-full rounded-2xl object-cover" src="/mountain.jpg" alt="Winding mountain road"/>
+                        <img className="h-full w-full rounded-2xl object-cover" src="/meet_the_team.jpg" alt="Winding mountain road"/>
                     </div>
                     {/* Text Section */}
                     <div className=" bg-grey md:max-w-2xl rounded-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-1/2 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
