@@ -19,7 +19,7 @@ const AlternatingSection = ({
 
     return (
         <div className={`flex flex-col ${responsiveFlexDirection} justify-between items-center w-full lg:px-20 py-10`}>
-            {/* Image Section */}
+            {/* Image Section  */}
             <div className="w-full lg:w-1/2">
                 <img className="w-full h-auto rounded-2xl object-cover shadow-lg" src={imageSrc} alt="Team"/>
             </div>
