@@ -1,5 +1,19 @@
-
-const AlternatingSection = ({ direction, imageSrc,bg, textColor, title, text }) => {
+interface AlternatingSectionProps {
+    direction: string;
+    imageSrc: string;
+    bg: string;
+    textColor: string;
+    title: string;
+    text: string;
+}
+const AlternatingSection = ({
+                                direction,
+                                imageSrc,
+                                bg,
+                                textColor,
+                                title,
+                                text
+                            }: AlternatingSectionProps) =>{
     const isReversed = direction === 'right';
 
     return (

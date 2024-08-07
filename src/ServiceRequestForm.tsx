@@ -32,7 +32,7 @@ const ServiceRequestForm = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e : any) => {
         e.preventDefault();
         console.log('Form Data:', formData);
 
@@ -41,9 +41,8 @@ const ServiceRequestForm = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // Optionally add authorization headers or API keys as required
                 },
-                body: JSON.stringify(formData) // Ensure formData is structured as needed for your backend
+                body: JSON.stringify(formData)
             });
 
             const data = await response.json();
