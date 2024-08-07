@@ -1,6 +1,8 @@
 import { useState } from 'react';
-
-const ServiceRequestForm = () => {
+interface ServiceRequestFormProps {
+    openModal: (message: string) => void;
+}
+const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
     const [formData, setFormData] = useState({
         urgent: false,
         description: '',
@@ -10,7 +12,6 @@ const ServiceRequestForm = () => {
         lastName: '',
         service: ''
     });
-
     const services = [
         'Other',
         'Heat Tape',
@@ -34,7 +35,6 @@ const ServiceRequestForm = () => {
 
     const handleSubmit = async (e : any) => {
         e.preventDefault();
-        console.log('Form Data:', formData);
 
         try {
             const response = await fetch('https://0faqyt69zf.execute-api.us-east-2.amazonaws.com/submit', {
@@ -45,10 +45,17 @@ const ServiceRequestForm = () => {
                 body: JSON.stringify(formData)
             });
 
-            const data = await response.json();
-            console.log('Server response:', data);
+            if (response.ok) {
+                openModal('Thanks for reaching out! A team member will be in touch shortly.');
+            } else {
+                const errorData = await response.json();
+                const errorMessage = errorData.message || 'An unexpected error occurred'; // Default message if none provided
+                openModal(`Error: ${errorMessage}`);
+            }
         } catch (error) {
+            // Handle unexpected errors
             console.error('Error submitting form:', error);
+            openModal(`An unexpected error occurred`);
         }
     };
 
