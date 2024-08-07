@@ -32,7 +32,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
             [name]: type === 'checkbox' ? checked : value
         });
     };
-
+    // trigger net
     const handleSubmit = async (e : any) => {
         e.preventDefault();
 
