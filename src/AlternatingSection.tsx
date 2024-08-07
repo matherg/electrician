@@ -15,9 +15,10 @@ const AlternatingSection = ({
                                 text
                             }: AlternatingSectionProps) =>{
     const isReversed = direction === 'right';
+    const responsiveFlexDirection = isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row';
 
     return (
-        <div className={`flex ${isReversed ? 'flex-row-reverse' : 'flex-row'} justify-between items-center w-full lg:px-20 py-10`}>
+        <div className={`flex flex-col ${responsiveFlexDirection} justify-between items-center w-full lg:px-20 py-10`}>
             {/* Image Section */}
             <div className="w-full lg:w-1/2">
                 <img className="w-full h-auto rounded-2xl object-cover shadow-lg" src={imageSrc} alt="Team"/>
