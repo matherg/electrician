@@ -12,8 +12,8 @@ const Header = () => {
         <header className="bg-white z-20 drop-shadow-lg text-bloo w-full py-4 fixed top-0 left-0">
             <div className="flex items-center justify-between px-4 h-full" style={{ height: '6rem' }}>
                 <div className="flex-1 flex justify-center items-center">
-                    <div className="flex items-center h-full">
-                        <img src="/logo.jpg" alt="Company Logo" className="max-h-32 hidden md:flex mr-4 object-contain" />
+                    <div className="flex items-center ">
+                        <img src="/logo.jpg" alt="Company Logo" className="h-28  hidden md:flex mr-4 object-contain" />
                     </div>
                 </div>
                 <div className="flex-1 md:flex hidden justify-center items-center">

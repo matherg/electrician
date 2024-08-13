@@ -25,15 +25,15 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
         'Service Changes'
     ];
 
-    const handleChange = (e : any) => {
-        const { name, value, type, checked } = e.target;
+    const handleChange = (e: any) => {
+        const {name, value, type, checked} = e.target;
         setFormData({
             ...formData,
             [name]: type === 'checkbox' ? checked : value
         });
     };
     // net trigger
-    const handleSubmit = async (e : any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
 
         try {
@@ -58,7 +58,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
             openModal(`An unexpected error occurred`);
         }
     };
-
+    const required = <span className="text-red-500">*</span>
 
     return (
         <div id="services" className="flex flex-col items-center justify-center h-3/5 bg-bloo">
@@ -76,7 +76,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                     <label>Urgent (within the week)</label>
                 </div>
                 <div>
-                    <label className="block mb-1">Email</label>
+                    <label className="block mb-1">Email {required}</label>
                     <input
                         type="email"
                         name="email"
@@ -87,7 +87,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                     />
                 </div>
                 <div>
-                    <label className="block mb-1">Phone Number</label>
+                    <label className="block mb-1">Phone Number {required}</label>
                     <input
                         type="tel"
                         name="phoneNumber"
@@ -99,7 +99,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                 </div>
                 <div className="flex gap-4">
                     <div className="w-1/2">
-                        <label className="block mb-1 ">First Name</label>
+                        <label className="block mb-1 ">First Name {required}</label>
                         <input
                             type="text"
                             name="firstName"
@@ -110,19 +110,19 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                         />
                     </div>
                     <div className="w-1/2">
-                        <label className="block mb-1">Last Name</label>
+                        <label className="block mb-1">Last Name {required}</label>
                         <input
                             type="text"
                             name="lastName"
                             required={true}
                             value={formData.lastName}
                             onChange={handleChange}
-                            className="w-full p-2 border border-gray-300 rounded-md"
+                            className="w-full  p-2 border border-gray-300 rounded-md"
                         />
                     </div>
                 </div>
                 <div>
-                    <label className="block mb-1 ">Services</label>
+                    <label className="block mb-1 ">Services </label>
                     <select
                         name="service"
                         value={formData.service}
@@ -135,7 +135,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                     </select>
                 </div>
                 <div>
-                    <label className="block mb-1 ">Description</label>
+                    <label className="block mb-1 ">Description {required}</label>
                     <textarea
                         name="description"
                         value={formData.description}

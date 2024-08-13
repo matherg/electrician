@@ -15,6 +15,10 @@ module.exports = {
                 fadedgrey: '#a8b0b9',
                 fadedgreen: '#b8c89a',
             },
+            fontFamily: {
+                sans: ['Open Sans', 'sans-serif'],
+                headings: ['Montserrat', 'sans-serif'],
+            }
         },
     },
     container: {
