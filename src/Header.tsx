@@ -13,8 +13,7 @@ const Header = () => {
             <div className="flex items-center justify-between px-4 h-full" style={{ height: '6rem' }}>
                 <div className="flex-1 flex justify-center items-center">
                     <div className="flex items-center h-full">
-                        <img src="/jonlogo.png" alt="Company Logo" className="max-h-32 hidden md:flex mr-4 object-contain" />
-                        <span className="text-2xl  font-bold">Ascent Electric</span>
+                        <img src="/logo.jpg" alt="Company Logo" className="max-h-32 hidden md:flex mr-4 object-contain" />
                     </div>
                 </div>
                 <div className="flex-1 md:flex hidden justify-center items-center">
