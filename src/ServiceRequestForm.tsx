@@ -80,6 +80,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                     <input
                         type="email"
                         name="email"
+                        required={true}
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full p-2 border border-gray-300 rounded-md"
@@ -90,6 +91,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                     <input
                         type="tel"
                         name="phoneNumber"
+                        required={true}
                         value={formData.phoneNumber}
                         onChange={handleChange}
                         className="w-full p-2 border border-gray-300 rounded-md"
@@ -101,6 +103,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                         <input
                             type="text"
                             name="firstName"
+                            required={true}
                             value={formData.firstName}
                             onChange={handleChange}
                             className="w-full p-2 border border-gray-300 rounded-md"
@@ -111,6 +114,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                         <input
                             type="text"
                             name="lastName"
+                            required={true}
                             value={formData.lastName}
                             onChange={handleChange}
                             className="w-full p-2 border border-gray-300 rounded-md"
@@ -135,6 +139,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                     <textarea
                         name="description"
                         value={formData.description}
+                        required={true}
                         onChange={handleChange}
                         className="w-full p-2 border border-gray-300 rounded-md"
                     />
