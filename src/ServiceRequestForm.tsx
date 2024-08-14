@@ -1,7 +1,12 @@
 import { useState } from 'react';
+import 'react-phone-number-input/style.css';
+import Input, { isPossiblePhoneNumber } from 'react-phone-number-input/input';
+import {formatPhoneNumber} from "react-phone-number-input";
+
 interface ServiceRequestFormProps {
     openModal: (message: string) => void;
 }
+
 const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
     const [formData, setFormData] = useState({
         urgent: false,
@@ -12,6 +17,11 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
         lastName: '',
         service: ''
     });
+    const [errors, setErrors] = useState({
+        email: '',
+        phoneNumber: ''
+    });
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const services = [
         'Other',
         'Heat Tape',
@@ -24,18 +34,43 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
         'Panel Changes',
         'Service Changes'
     ];
+    const handlePhoneChange = (value: string) => {
+        const cleanedValue = value || '';
+        setErrors({
+            ...errors,
+            phoneNumber: isPossiblePhoneNumber(cleanedValue) || cleanedValue === '' ? '' : 'Invalid phone format'
+        });
 
+        setFormData({
+            ...formData,
+            phoneNumber: value
+        });
+    };
     const handleChange = (e: any) => {
         const {name, value, type, checked} = e.target;
         setFormData({
             ...formData,
             [name]: type === 'checkbox' ? checked : value
         });
+        if (name === 'email') {
+            setErrors({
+                ...errors,
+                email: emailRegex.test(value) ? '' : 'Invalid email format'
+            });
+        }
     };
     // net trigger
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-
+        if (errors.email) {
+            openModal("Please enter a valid email address");
+            return;
+        }
+        if (errors.phoneNumber) {
+            openModal("Please enter a valid phone number");
+            return;
+        }
+        formData.phoneNumber = formatPhoneNumber(formData.phoneNumber);
         try {
             const response = await fetch('https://0faqyt69zf.execute-api.us-east-2.amazonaws.com/submit', {
                 method: 'POST',
@@ -85,17 +120,19 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                         onChange={handleChange}
                         className="w-full p-2 border border-gray-300 rounded-md"
                     />
+                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+
                 </div>
                 <div>
                     <label className="block mb-1">Phone Number {required}</label>
-                    <input
-                        type="tel"
-                        name="phoneNumber"
-                        required={true}
-                        value={formData.phoneNumber}
-                        onChange={handleChange}
+                    <Input
+                        country="US"
+                        onChange={handlePhoneChange}
                         className="w-full p-2 border border-gray-300 rounded-md"
+                        value={formData.phoneNumber}
+                        required={true}
                     />
+                    {errors.phoneNumber && <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>}
                 </div>
                 <div className="flex gap-4">
                     <div className="w-1/2">
