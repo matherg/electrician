@@ -35,17 +35,19 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
         'Panel Changes',
         'Service Changes'
     ];
-    const handlePhoneChange = (value: E164Number) => {
+    const handlePhoneChange = (value?: E164Number) => {
         const cleanedValue = value || '';
         setErrors({
             ...errors,
             phoneNumber: isPossiblePhoneNumber(cleanedValue) || cleanedValue === '' ? '' : 'Invalid phone format'
         });
+        if (value) {
+            setFormData({
+                ...formData,
+                phoneNumber: value.toString()
+            });
+        }
 
-        setFormData({
-            ...formData,
-            phoneNumber: value.toString()
-        });
     };
     const handleChange = (e: any) => {
         const {name, value, type, checked} = e.target;
