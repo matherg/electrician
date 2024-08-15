@@ -2,6 +2,7 @@ import { useState } from 'react';
 import 'react-phone-number-input/style.css';
 import Input, { isPossiblePhoneNumber } from 'react-phone-number-input/input';
 import {formatPhoneNumber} from "react-phone-number-input";
+import {E164Number} from "libphonenumber-js";
 
 interface ServiceRequestFormProps {
     openModal: (message: string) => void;
@@ -34,7 +35,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
         'Panel Changes',
         'Service Changes'
     ];
-    const handlePhoneChange = (value: string) => {
+    const handlePhoneChange = (value?: E164Number) => {
         const cleanedValue = value || '';
         setErrors({
             ...errors,
@@ -43,7 +44,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
 
         setFormData({
             ...formData,
-            phoneNumber: value
+            phoneNumber: value?.toString()
         });
     };
     const handleChange = (e: any) => {
