@@ -35,7 +35,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
         'Panel Changes',
         'Service Changes'
     ];
-    const handlePhoneChange = (value?: E164Number) => {
+    const handlePhoneChange = (value: E164Number) => {
         const cleanedValue = value || '';
         setErrors({
             ...errors,
@@ -44,7 +44,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
 
         setFormData({
             ...formData,
-            phoneNumber: value?.toString()
+            phoneNumber: value.toString()
         });
     };
     const handleChange = (e: any) => {
