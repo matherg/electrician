@@ -73,14 +73,19 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
             openModal("Please enter a valid phone number");
             return;
         }
-        formData.phoneNumber = formatPhoneNumber(formData.phoneNumber);
+        const phone = formatPhoneNumber(formData.phoneNumber)
+
+        const body = {
+            ...formData,
+            phoneNumber: phone
+        }
         try {
             const response = await fetch('https://0faqyt69zf.execute-api.us-east-2.amazonaws.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(body)
             });
 
             if (response.ok) {
