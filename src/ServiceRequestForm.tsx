@@ -106,6 +106,8 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
     return (
         <div id="services" className="flex flex-col items-center justify-center h-3/5 bg-bloo">
             <h1 className="md:text-4xl text-2xl font-semibold text-center text-green mt-20 ">Request a Service</h1>
+            <h2 className='md:text-2xl text-xl  text-center text-white mt-10'>Send us an email at <a href="mailto:ascentelectricinc@gmail.com" className="text-white underline">ascentelectricinc@gmail.com</a> and we'll respond shortly!</h2>
+            {/*
             <form onSubmit={handleSubmit}
                   className="space-y-4 items-center max-w-lg bg-white font-semibold text-bloo  mt-10 p-4 rounded-lg shadow-md">
                 <div className="flex items-center  gap-2">
@@ -192,7 +194,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                 <button type="submit" className="w-full p-2 bg-green  rounded-md">
                     Submit
                 </button>
-            </form>
+                </form>*/}
         </div>
     );
 };
