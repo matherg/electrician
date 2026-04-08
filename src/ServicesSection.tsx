@@ -4,7 +4,7 @@ const ServicesSection = () => {
             <div className="container  mx-auto px-4">
                 <h2 className="text-4xl text-white font-bold text-center mb-8">What We Do</h2>
                 <p className=" text-lg text-white text-center font-semibold mb-6">
-                    Ascent Electric is fully capable of meeting all your project requirements – from small installations to large-scale, complex projects. We are ready to design and install any system your building requires. Our experience spans both commercial and residential sectors, including work on facilities such as multifamily residences, ski shops, and custom homes. When you choose Ascent Electric, you choose timely, quality services that adhere to your budget.
+                    Ascent Electric handles projects of all sizes, from small installations to large, complex systems. We design and install electrical solutions tailored to your building’s needs. Our experience spans commercial and residential sectors, including multifamily residences, ski shops, and custom homes. With Ascent Electric, you get reliable, high-quality service delivered on time and within budget.
                 </p>
                 <div className="bg-white p-6 mx-auto rounded-lg md:w-1/3 w-3/4 shadow-lg">
                     <h3 className="text-xl font-bold text-blue mb-4">Services</h3>
