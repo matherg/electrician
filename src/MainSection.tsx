@@ -31,7 +31,7 @@ const MainSection = () => {
             {/* Content */}
             <div className="relative z-10 text-center">
                 <h1 className="text-6xl font-bold mb-4 text-white">Ascent Electric</h1>
-                <h2 className="text-5xl font-bold mb-4 text-green">"The reliable electrician"</h2>
+                <h2 className="text-5xl font-bold mb-4 text-green">Delivering Reliable Electrical Service Since 1998</h2>
                 <button onClick={() => scrollToSection('services')} className="bg-white text-bloo px-6 py-3 rounded-lg">
                     Contact Us
                 </button>
