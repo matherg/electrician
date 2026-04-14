@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import 'react-phone-number-input/style.css';
 import Input, { isPossiblePhoneNumber } from 'react-phone-number-input/input';
-import {formatPhoneNumber} from "react-phone-number-input";
-import {E164Number} from "libphonenumber-js";
+import { formatPhoneNumber } from "react-phone-number-input";
+import { E164Number } from "libphonenumber-js";
 
 interface ServiceRequestFormProps {
     openModal: (message: string) => void;
 }
 
-const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
+const ServiceRequestForm = ({ openModal }: ServiceRequestFormProps) => {
     const [formData, setFormData] = useState({
         urgent: false,
         description: '',
@@ -50,7 +50,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
 
     };
     const handleChange = (e: any) => {
-        const {name, value, type, checked} = e.target;
+        const { name, value, type, checked } = e.target;
         setFormData({
             ...formData,
             [name]: type === 'checkbox' ? checked : value
@@ -89,6 +89,11 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
             });
 
             if (response.ok) {
+                if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'conversion', {
+                        'send_to': 'AW-17271225649/GVk3CP-T8JocELH6x6tA'
+                    });
+                }
                 openModal('Thanks for reaching out! A team member will be in touch shortly.');
             } else {
                 const errorData = await response.json();
@@ -106,9 +111,9 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
     return (
         <div id="services" className="flex flex-col items-center justify-center h-3/5 bg-bloo">
             <h1 className="md:text-4xl text-2xl font-semibold text-center text-green mt-20 ">Request a Service</h1>
-           
+
             <form onSubmit={handleSubmit}
-                  className="space-y-4 items-center max-w-lg bg-white font-semibold text-bloo  mt-10 p-4 rounded-lg shadow-md">
+                className="space-y-4 items-center max-w-lg bg-white font-semibold text-bloo  mt-10 p-4 rounded-lg shadow-md">
                 <div className="flex items-center  gap-2">
                     <input
                         type="checkbox"
@@ -193,7 +198,7 @@ const ServiceRequestForm = ({ openModal } : ServiceRequestFormProps) => {
                 <button type="submit" className="w-full p-2 bg-green  rounded-md">
                     Submit
                 </button>
-                </form>
+            </form>
         </div>
     );
 };
